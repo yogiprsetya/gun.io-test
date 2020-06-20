@@ -6,8 +6,6 @@
 // In the range, 1 - 2,660 (half the number of Romans in a legion), expressed in
 // Roman numerals, how many times does the numeral “X” occur?
 
-
-
 function convertToRoman(num) {
     let numIn = [];
     
