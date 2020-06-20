@@ -19,7 +19,7 @@ function isVowel(c) {
 
 function createSumAscii(str) {
     let asciiOut = [];
-    let stringIn = str.replace(/\s/g, '');
+    let stringIn = str.replace(/[^0-9a-zA-Z]/g, '');
     
     for(let i = 0; i < stringIn.length; i++) {
         if(isVowel(stringIn[i])) {
@@ -29,8 +29,6 @@ function createSumAscii(str) {
         }
         
     }
-    
+    console.log(asciiOut.reduce((a, b) => a + b, 0))
     return asciiOut.reduce((a, b) => a + b, 0);
 }
-
-createSumAscii('why and how');
