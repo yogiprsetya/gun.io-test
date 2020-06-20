@@ -12,13 +12,11 @@ function isPalindrome(str) {
 }
 
 function countPalindrome(total) {
-    let counter = 0;
+    let counter = [];
     
     for (let i = 1; i <= total; i++) {
-        isPalindrome(i) && counter++
+        isPalindrome(i) && counter.push(i)
     }
     
-    return counter
+    return counter.reduce((a, b) => a + b, 0)
 }
-
-countPalindrome(10000)
