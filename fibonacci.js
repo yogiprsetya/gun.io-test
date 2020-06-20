@@ -8,13 +8,21 @@
 
 
 function sumOdd(num) {
-    let fibs=[];
-    
-    for(let i=0 ; i < num ;i++) {
-        if(i%2 !== 0) {
-            fibs.push(i);   
-        }
-    }
+    var oddNum = [];
+    var fib = [];
 
-    return fibs.reduce((a, b) => a + b, 0);
+    fib[0] = 0;
+    fib[1] = 1;
+    
+    for (let i = 2; fib[i - 2] + fib[i - 1] <= num; i++) {
+        fib[i] = fib[i - 2] + fib[i - 1];
+    }
+    
+    fib.map(function (val, i) {
+        if(val%2 !== 0) {
+            oddNum.push(val);   
+        }
+    })
+
+    return oddNum.reduce((a, b) => a + b, 0);
 }
